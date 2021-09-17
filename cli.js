@@ -12,9 +12,9 @@ program.parse(process.argv);
 const options = program.opts();
 const { param } = options;
 if (param) {
-  const paramReg = /s=.+#p=.+/;
+  const paramReg = /s=.+#t=.+/;
   if (!paramReg.test(param)) {
-    console.log(chalk.red("【datachecker】- 🤔 参数格式不正确，正确格式为: datachecker -p s='xxx'#p='xxx'"));
+    console.log(chalk.red("【datachecker】- 🤔 参数格式不正确，正确格式为: datachecker -p s='xxx'#t='xxx'"));
     return false;
   }
   const pathStr = param.split('#');
