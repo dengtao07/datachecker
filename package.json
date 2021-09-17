@@ -1,5 +1,5 @@
 {
-  "name": "datachecker",
+  "name": "runtime-data-checker",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

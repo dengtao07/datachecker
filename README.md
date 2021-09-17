@@ -1,4 +1,4 @@
-## datachecker
+## runtime-data-checker
 根据接口的 TypeScript 类型定义，在运行时校验后端返回数据的格式正确性
 
 ## 原理
@@ -7,7 +7,7 @@
 ## useage
 1. install
 ```
-npm i datachecker -S
+npm i runtime-data-checker -S
 ```
 
 2. 工程下创建类型定义文件
@@ -22,20 +22,20 @@ interface IApi {
 }
 ```
 
-3. 使用 datachecker cli命令将步骤 2 中 `index.ts` 转为 JSON Schema
+3. 使用 runtime-data-checker cli命令将步骤 2 中 `index.ts` 转为 JSON Schema
 ```
-datachecker -p s='类型文件路径'#t='JSON Schema存放路径'
+runtime-data-checker -p s='类型文件路径'#t='JSON Schema存放路径'
 ```
 例如：
 ```
-datachecker -p s=apis/index.ts#t=apis/schema.json
+runtime-data-checker -p s=apis/index.ts#t=apis/schema.json
 ```
 对应的 JSON Schema 将保存在 `src/apis/schema.json` 中
 
 4. 使用 JSON Schema 校验数据正确性
 ```javascript
 const path = require('path');
-const { checkByJsonSchema } = require('datachecker');
+const { checkByJsonSchema } = require('runtime-data-checker');
 
 const Api = async () => Promise.resolve({
   name: 'test',
